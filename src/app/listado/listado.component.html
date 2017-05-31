@@ -1,0 +1,13 @@
+<ul class="list-group" *ngIf="elements.length > 0">
+  <li class="list-group-item active">Elements</li>
+  <li class="list-group-item" *ngFor="let element of elements">
+    {{element}}
+  </li>
+</ul>
+
+<form (submit)="addElement()" style="margin-top:20px">
+  <div class="form-group">
+    <label>Add element</label>
+    <input class="form-control" type="text" [(ngModel)]="element" [ngModelOptions]="{standalone: true}" placeholder="Element..." />
+  </div>
+</form>
