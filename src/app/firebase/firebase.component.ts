@@ -25,14 +25,19 @@ export class FirebaseComponent implements OnInit {
   ngOnInit() {
   }
 
-  addEntry() {
+  onCreate() {
     const itemObservable = this.db.list('/elements/');
     itemObservable.push({value: this.value});
 
     this.value = '';
   }
 
-  delete(object) {
+  onEdit(object) {
+    const itemObservable = this.db.object('/elements/' + object.$key);
+    itemObservable.update({value: object.value});
+  }
+
+  onDelete(object) {
     const itemObservable = this.db.list('/elements/');
     itemObservable.remove(object.$key);
   }

@@ -5,8 +5,9 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
+
 export class LoginComponent implements OnInit {
 
   username = ''; // 'damarte86@gmail.com';
@@ -14,13 +15,15 @@ export class LoginComponent implements OnInit {
 
   error = '';
 
-  constructor(public auth: AuthenticationService, public router: Router) {
-    if (this.auth.loggedIn) {
-      this.router.navigate(['condicionales']);
-    }
-  }
+  constructor(public auth: AuthenticationService, public router: Router) { }
 
   ngOnInit() {
+    if (this.auth.loggedIn) {
+      console.log('entra');
+      setTimeout(() => {
+        this.router.navigate(['condicionales']);
+      }, 250);
+    }
   }
 
   onLogin(event) {

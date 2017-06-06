@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -12,6 +13,7 @@ import { environment } from 'environments/environment';
 
 import { ResultsService } from 'app/results.service';
 
+import { InlineEditComponent } from './inline-edit/inline-edit.component';
 import { AppComponent } from './app.component';
 import { ListadoComponent } from './listado/listado.component';
 import { MisclientesComponent } from './misclientes/misclientes.component';
@@ -48,9 +50,11 @@ const routes: Routes = [
     EventillosComponent,
     FormulariosComponent,
     LoginComponent,
+    InlineEditComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(routes),

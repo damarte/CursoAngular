@@ -4,7 +4,7 @@
     {{error}}
   </div>
   <label for="inputEmail" class="sr-only">Email address</label>
-  <input type="email" name="username" [(ngModel)]="username" #usernameField="ngModel" [ngModelOptions]="{standalone: true}" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus>
+  <input type="email" name="username" email [(ngModel)]="username" #usernameField="ngModel" [ngModelOptions]="{standalone: true}" id="inputEmail" class="form-control" placeholder="Email address" required="required" autofocus>
   <div [hidden]="usernameField.valid || usernameField.pristine" class="alert alert-danger">
     Email is required
   </div>
@@ -13,5 +13,5 @@
   <div [hidden]="passwordField.valid || passwordField.pristine" class="alert alert-danger">
     Password is required
   </div>
-  <button [disabled]="!loginForm.form.valid" class="btn btn-primary btn-block" type="submit">Sign in</button>
+  <button [disabled]="!loginForm.valid" class="btn btn-primary btn-block" type="submit">Sign in</button>
 </form>

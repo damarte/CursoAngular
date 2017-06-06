@@ -1,12 +1,9 @@
 <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
-  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+
   <a class="navbar-brand" routerLink="/" routerLinkActive="active">Curso Angular</a>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault"></div>
 
-  <button [hidden]="!loggedIn" (click)="onLogout($event)" class="btn btn-outline-default my-2 my-sm-0">Logout</button>
+  <button [hidden]="!loggedIn" (click)="onLogout($event)" class="navbar-toggler-right btn btn-outline-default my-sm-0">Logout</button>
 </nav>
 
 <div class="container-fluid">
@@ -37,7 +34,7 @@
       </ul>
     </nav>
 
-    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+    <main [ngClass]="{'col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3': loggedIn, 'col-sm-12': !loggedIn}">
       <router-outlet></router-outlet>
     </main>
   </div>
