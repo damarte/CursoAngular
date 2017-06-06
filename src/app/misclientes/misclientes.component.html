@@ -8,10 +8,10 @@
 
 <form (submit)="addClient()" style="margin-top:20px">
   <div class="form-group">
-    <input type="text" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" placeholder="Name..." />
+    <input type="text" class="form-control" [(ngModel)]="name" [ngModelOptions]="{standalone: true}" placeholder="Name..." />
   </div>
   <div class="form-group">
-    <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" placeholder="Address..." />
+    <input type="text" class="form-control" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" placeholder="Address..." />
   </div>
   <div class="form-group">
     <input class="btn btn-primary" type="submit" />

@@ -11,14 +11,10 @@ export class ResultadosComponent implements OnInit {
 
   results: Result[] = [];
 
-  constructor(private resultService: ResultsService) {
+  constructor(public resultService: ResultsService) {
     this.resultService.loadData().subscribe(data =>
       this.results = data
     );
-    /*this.results = [
-      new Result('Podemos', 'Dirección 1', 10),
-      new Result('PP', 'Dirección 2', 10)
-    ];*/
   }
 
   ngOnInit() {

@@ -7,7 +7,7 @@
 
 <form (submit)="addElement()" style="margin-top:20px">
   <div class="form-group">
-    <label>Add element</label>
-    <input class="form-control" type="text" [(ngModel)]="element" [ngModelOptions]="{standalone: true}" placeholder="Element..." />
+    <label for="text">Add element</label>
+    <input class="form-control" id="text" class="form-control" type="text" [(ngModel)]="element" [ngModelOptions]="{standalone: true}" placeholder="Element..." />
   </div>
 </form>

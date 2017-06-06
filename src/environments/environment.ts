@@ -7,7 +7,7 @@ export const environment = {
   production: false,
   firebase: {
     apiKey: 'AIzaSyCp-1r9J4pg2wzJPS47ZURIB2cqjTUgj0M',
-    authDomain: '',
+    authDomain: 'localhost:4200',
     databaseURL: 'https://fir-test-14d85.firebaseio.com/',
     projectId: ' fir-test-14d85',
     storageBucket: '',

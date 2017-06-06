@@ -1,34 +1,44 @@
-<div class="card mx-auto" style="width: 400px;margin-top:20px;">
-  <div class="card-block">
-    <h4 class="card-title">Firebase</h4>
-    <app-firebase></app-firebase>
-  </div>
-</div>
+<nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" routerLink="/" routerLinkActive="active">Curso Angular</a>
 
-<div class="card mx-auto" style="width: 400px;margin-top:20px;">
-  <div class="card-block">
-    <h4 class="card-title">Resultados</h4>
-    <app-resultados></app-resultados>
-  </div>
-</div>
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault"></div>
 
-<div class="card mx-auto" style="width: 400px;margin-top:20px;">
-  <div class="card-block">
-    <h4 class="card-title">Listado</h4>
-    <app-listado></app-listado>
-  </div>
-</div>
+  <button [hidden]="!loggedIn" (click)="onLogout($event)" class="btn btn-outline-default my-2 my-sm-0">Logout</button>
+</nav>
 
-<div class="card mx-auto" style="width: 400px;margin-top:20px;">
-  <div class="card-block">
-    <h4 class="card-title">Clientes</h4>
-    <app-misclientes></app-misclientes>
-  </div>
-</div>
+<div class="container-fluid">
+  <div class="row">
+    <nav [hidden]="!loggedIn" class="col-sm-3 col-md-2 hidden-xs-down bg-faded sidebar">
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/condicionales" routerLinkActive="active">Condicionales</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/listado" routerLinkActive="active">Listado</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/misclientes" routerLinkActive="active">Mis Clientes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/eventos" routerLinkActive="active">Eventos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/resultados" routerLinkActive="active">Resultados</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/formularios" routerLinkActive="active">Formularios</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/firebase" routerLinkActive="active">Firebase</a>
+        </li>
+      </ul>
+    </nav>
 
-<div class="card mx-auto" style="width: 400px;margin-top:20px;margin-bottom:20px">
-  <div class="card-block">
-    <h4 class="card-title">Condicionales</h4>
-    <app-condicionales></app-condicionales>
+    <main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+      <router-outlet></router-outlet>
+    </main>
   </div>
 </div>

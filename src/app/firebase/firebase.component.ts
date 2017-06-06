@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-firebase',
@@ -7,12 +8,11 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   styleUrls: ['./firebase.component.css']
 })
 export class FirebaseComponent implements OnInit {
-  db: AngularFireDatabase;
 
   value: string;
   items: FirebaseListObservable<any[]>;
 
-  constructor(db: AngularFireDatabase) {
+  constructor(public db: AngularFireDatabase) {
     this.db = db;
     this.items = this.db.list('/elements', {
       query: {
@@ -27,7 +27,7 @@ export class FirebaseComponent implements OnInit {
 
   addEntry() {
     const itemObservable = this.db.list('/elements/');
-    itemObservable.push(this.value);
+    itemObservable.push({value: this.value});
 
     this.value = '';
   }

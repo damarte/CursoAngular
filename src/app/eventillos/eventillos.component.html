@@ -1,0 +1,9 @@
+<button (click)="bueno($event)" (mouseover)="risa($event)" type="button" class="btn btn-danger">El bueno</button>
+<button (click)="feo($event)" type="button" class="btn btn-secondary">El feo</button>
+<button (click)="malo($event)" type="button" class="btn btn-info">El malo</button>
+
+<form (submit)="print()" style="margin-top:20px">
+  <div class="form-group">
+    <input (blur)="validate()" type="text" [(ngModel)]="value" [ngModelOptions]="{standalone: true}" placeholder="Value..." />
+  </div>
+</form>
